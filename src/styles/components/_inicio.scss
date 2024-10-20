@@ -1,14 +1,11 @@
 .inicio_container{
     width: 100%;
-    margin: 0px auto 30px;
+    margin: 120px auto 30px;
     justify-content: space-between;
     padding: 34px;
     border-radius: 0 0 150px 150px;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.41);
     min-height: 500px;
-    .person_card{
-        width: 35%;
-    }
     .intro_content-text{
         width: 65%;
         .subtitle_top{
@@ -16,16 +13,6 @@
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5rem;
-        }
-    }
-    .container_photo{
-        .photo_site{
-            max-width: 300px;
-            height: 250px;
-            clip-path:polygon(50% 0%, 100% 14%, 100% 86%, 50% 100%, 0% 86%, 0% 14%);
-        }
-        .badge{
-            color: var(--txt-color);
         }
     }
     .title_init{
@@ -47,7 +34,6 @@
         text-transform: uppercase;
         color: var(--blue-turk);
         position: relative;
-        // animation: wiggle 2s linear infinite;
     }
 
 }

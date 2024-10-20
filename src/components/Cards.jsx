@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Badge from './Badge';
 import VanillaTilt from 'vanilla-tilt';
+import { GiWeight } from "react-icons/gi";
+import { CiRuler } from "react-icons/ci";
+import { Slider } from '@mui/material';
 
 export const Cards = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -68,20 +71,27 @@ export const Cards = () => {
                 className={`poke_card tilt-card front ${primaryType}`}
                 onClick={() => toggleModal(pokemon)} 
               >
+                <span className={`poke-id id-${primaryType}`}>{pokemon.id}</span>
                 <figure className='container_img-pokemon'>
-                  <img src={pokemon.sprites?.other?.['official-artwork']?.front_default || pokemon.sprites.front_default} alt={pokemon.name} />
+                  <img  src={pokemon.sprites?.other?.['official-artwork']?.front_default || pokemon.sprites.front_default} alt={pokemon.name} />
                 </figure>
                 <header>
                   <h2 className='title_pokemon-name'>{pokemon.name}</h2>
                   <div className="type_container">
                     <h3 className='type_title'>Type:</h3>
                     <div className='types_badges-container'>
-                      {pokemon.types.map((type, index) => (
-                        <span className='badge_type' key={index}>
+                      {pokemon.types.map((type) => (
                           <Badge type={type.type.name}>{type.type.name}</Badge>
-                        </span>
                       ))}
                     </div>
+                  </div>
+                  <div className={'sizes-container'}>
+                      <h2><span>{
+                      pokemon.weight / 10
+                      } Kg</span> <br /> <GiWeight size="2em"/> Weight </h2>
+                      <h2><span>{
+                      pokemon.height / 10
+                      } M</span> <br /> <CiRuler size="2em"/> Height </h2>
                   </div>
                 </header>
               </div>
@@ -97,6 +107,7 @@ export const Cards = () => {
           onClick={() => toggleModal(null)}
         >
           <div className={`modal-content container ${selectedPokemon.types[0].type.name.toLowerCase()}`} onClick={(e) => e.stopPropagation()}>
+            <span onClick={() => toggleModal(null)} className={"close"}></span>
             <header>
               <h2>{selectedPokemon.name}</h2>
             </header>
@@ -109,7 +120,7 @@ export const Cards = () => {
                 <div className='types'>
                   {selectedPokemon.types.map((type, index) => (
                     <Badge key={index} type={type.type.name}>
-                      {type.type.name}
+                      {type.type.name }
                     </Badge>
                   ))}
                 </div>
@@ -123,10 +134,16 @@ export const Cards = () => {
               <h3>Stats:</h3>
               <ul>
                 {selectedPokemon.stats.map((stat, index) => (
-                  <li key={index}>
-                    {stat.stat.name}: {stat.base_stat}
-                  </li>
-                ))}
+                    <li key={index}>
+                      <strong>{stat.stat.name}:</strong> {stat.base_stat}
+                      <Slider
+                        value={stat.base_stat}
+                        min={0} 
+                        max={150} 
+                        disabled 
+                      />
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
