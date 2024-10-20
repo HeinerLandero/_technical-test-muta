@@ -1,0 +1,118 @@
+.badge-shiny {
+    color: #ffffffc2;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+      0px 18px 23px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 10px;
+        height: 110%;
+        background-image: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 80%,
+          rgba(255, 255, 225, 0.7) 100%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        animation: shine 2.2s infinite linear;
+        backdrop-filter: brightness(108%);
+        border-radius: 50%;
+        will-change: transform;
+      }
+  }
+  
+  .badge-wrapper {
+    max-width: 120px;
+    position: relative;
+    height: fit-content;
+    padding: 1rem;
+    container-type: inline-size;
+    .poke_badge {
+        display: inline-block;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border-radius: 10px;
+    }
+    .badge-fire {
+        background-color: var(--fire);
+      }
+      
+    .badge-water {
+        background-color: var(--water);
+      }
+      
+    .badge-electric {
+        background-color: var(--electric);
+      }
+      
+    .badge-grass {
+        background-color: var(--grass);
+      }
+      
+    .badge-ice {
+        background-color: var(--ice);
+      }
+      
+    .badge-fighting {
+        background-color: var(--fighting);
+      }
+      
+    .badge-poison {
+        background-color: var(--poison);
+      }
+      
+    .badge-ground {
+        background-color: var(--ground);
+      }
+      
+    .badge-flying {
+        background-color: var(--flying);
+      }
+      
+    .badge-psychic {
+        background-color: var(--psychic);
+      }
+      
+    .badge-bug {
+        background-color: var(--bug);
+      }
+      
+    .badge-rock {
+        background-color: var(--rock);
+      }
+      
+    .badge-ghost {
+        background-color: var(--ghost);
+      }
+      
+    .badge-dragon {
+        background-color: var(--dragon);
+      }
+      
+    .badge-dark {
+        background-color: var(--dark);
+      }
+      
+    .badge-steel {
+        background-color: var(--steel);
+      }
+      
+    .badge-fairy {
+        background-color: var(--fairy);
+      }
+      
+    .badge-normal {
+        background-color: var(--normal);
+      }
+  }
+  
+  
+  
+  
+  

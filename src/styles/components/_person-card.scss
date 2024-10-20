@@ -1,0 +1,17 @@
+.container_person{
+    .react-magic-motion-background-fade{
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    img{
+        mask-image: radial-gradient(circle, black 67%, rgba(0, 0, -18, -0.5) 69%)
+    }
+    .icon-button{
+        animation: wiggle 2s linear infinite;
+    }
+    button{
+        display: flex;
+        justify-content: flex-end;
+    }
+}

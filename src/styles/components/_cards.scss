@@ -1,0 +1,198 @@
+.card-1-page {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 160px;
+    width: 100%;
+    margin-top: 160px;
+    justify-content: center;
+    .content_card {
+      width: 100%;
+      .poke_card { 
+        position: relative;
+        width: 100%;
+        background-color: transparent;
+        height: 500px;
+      }
+    }
+  }
+  .front {
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.6s;
+    height: 100%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.41);
+    cursor: pointer;
+    
+    label {
+      color: var(--white);
+      margin-right: 10px;
+    }
+    .title_pokemon-name {
+      color: var(--white);
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: bolder;
+      letter-spacing: 1.5px;
+    }
+    .type_container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      .type_title {
+        color: var(--white);
+      }
+      .types_badges-container {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+    .container_img-pokemon {
+      margin-top: -50%;
+      width: 100%;
+      z-index: 8;
+      position: relative;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 26px;
+    flex-direction: column;
+  }
+  .js-tilt-glare{
+    border-radius: 20px;
+  }
+  .fire {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--fire) 95%);
+  }
+
+  .water {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--water) 95%);
+  }
+
+  .electric {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--electric) 95%);
+  }
+
+  .grass {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--grass) 95%);
+  }
+
+  .ice {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--ice) 95%);
+  }
+
+  .fighting {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--fighting) 95%);
+  }
+
+  .poison {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--poison) 95%);
+  }
+
+  .ground {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--ground) 95%);
+  }
+
+  .flying {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--flying) 95%);
+  }
+
+  .psychic {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--psychic) 95%);
+  }
+
+  .bug {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--bug) 95%);
+  }
+
+  .rock {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--rock) 95%);
+  }
+
+  .ghost {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--ghost) 95%);
+  }
+
+  .dragon {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--dragon) 95%);
+  }
+
+  .dark {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--dark) 95%);
+  }
+
+  .steel {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--steel) 95%);
+  }
+
+  .fairy {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--fairy) 95%);
+  }
+
+  .normal {
+    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--normal) 95%);
+  }
+}
+
+.closing{
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.open{
+  visibility: visible;
+  opacity: 1;
+  animation: overlay-in 1s both;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .modal-container_types{
+      display: flex;
+      align-items: center;
+      .types{
+        display: flex;
+      }
+    }
+    h2{
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: var(--white);
+      letter-spacing: 5px;
+      font-size: 3rem;
+    }
+    h3{
+      color: var(--white);
+    }
+  }
+}
+

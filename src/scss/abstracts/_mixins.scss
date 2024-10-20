@@ -1,0 +1,98 @@
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  @keyframes shine {
+    0% {
+      transform: translateX(-20cqw) translateY(-5px) rotate(40deg);
+      opacity: 0;
+    }
+    70% {
+      transform: translateX(90cqw) translateY(-5px) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(150cqw) translateY(-5px) rotate(50deg);
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes rail {
+    0%,
+    40% {
+      opacity: 1;
+    }
+    55%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes icon {
+    5%,
+    100% {
+      height: 6px;
+      border-radius: 0;
+    }
+    3%,
+    15% {
+      background:var(--blue-turk);
+      translate: -30px 10px;
+      scale: 1 0.25;
+    }
+    45% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+    25%,
+    100% {
+      translate: 240px 20px;
+    }
+  }
+
+  @keyframes overlay-in {
+    0% {
+      scale: 0 0.004;
+    }
+    33% {
+      scale: 1 0.004;
+    }
+    66%,
+    100% {
+      scale: 1 1;
+    }
+  }
+  @keyframes modal-in {
+    0%,
+    66% {
+      opacity: 0;
+      visibility: hidden;
+      translate: -50% -40%;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }

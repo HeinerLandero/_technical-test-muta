@@ -1,0 +1,29 @@
+.container_main{
+    padding: 34px;
+    border-radius: 80px;
+    background: var( --primary_color);
+    .container{
+        width: 100%;
+    }
+    .intro_content{
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        .title{
+            color: var(--white);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        p{
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+    }
+    .about-me{
+        margin-top: 60px;
+        width: 100%;
+    }
+}

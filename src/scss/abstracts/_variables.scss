@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    /*Fonts*/
+    --primary-font:"Roboto", sans-serif;
+    /*Colors*/
+    --primary_color:#1d1c3c;
+    --secondary-color:#7d7ccb;
+    --degradient: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(34,34,69,1) 71%, rgba(149,0,255,1) 100%);
+    --degradient-opacity: rgba(255, 255, 255, 0.5);;
+    --white:#fbfeeb;
+    --txt-color:#000000;
+    --fire: #EE8130;
+    --water: #6390F0;
+    --electric: #F7D02C;
+    --grass: #7AC74C;
+    --ice: #96D9D6;
+    --fighting: #C22E28;
+    --poison: #A33EA1;
+    --ground: #E2BF65;
+    --flying: #A98FF3;
+    --psychic: #F95587;
+    --bug: #A6B91A;
+    --rock: #B6A136;
+    --ghost: #735797;
+    --dragon: #6F35FC;
+    --dark: #705746;
+    --steel: #B7B7CE;
+    --fairy: #D685AD;
+    --normal: #A8A77A;
+}
+
+// img{
+//     color: #DCFE50;
+//     color: #1a1a1a; 
+//     color: #232323; 
+//     color: #fbfeeb;
+
+// }

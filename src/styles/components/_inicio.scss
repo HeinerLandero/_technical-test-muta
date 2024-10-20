@@ -1,0 +1,100 @@
+.inicio_container{
+    width: 100%;
+    margin: 0px auto 30px;
+    justify-content: space-between;
+    padding: 34px;
+    border-radius: 0 0 150px 150px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.41);
+    min-height: 500px;
+    .person_card{
+        width: 35%;
+    }
+    .intro_content-text{
+        width: 65%;
+        .subtitle_top{
+            color: var(--blue-turk);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+        }
+    }
+    .container_photo{
+        .photo_site{
+            max-width: 300px;
+            height: 250px;
+            clip-path:polygon(50% 0%, 100% 14%, 100% 86%, 50% 100%, 0% 86%, 0% 14%);
+        }
+        .badge{
+            color: var(--txt-color);
+        }
+    }
+    .title_init{
+        font-weight: 600;
+        font-size: 6rem;
+        color: var(--white);
+        font-family: var(--primary-font);
+        width: 75%;
+        .dev{
+            color: var(--blue-turk);
+        }
+    }
+    p,h2,.short_description{
+        color:var(--white);
+    }
+    .contact_me {
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--blue-turk);
+        position: relative;
+        // animation: wiggle 2s linear infinite;
+    }
+
+}
+
+    
+@media screen and (max-width:990px){
+    .inicio_container{
+        display: flex;
+        flex-direction: column-reverse;
+        .intro_content-text{
+            width: 100%;
+            .title_init{
+                font-size: 4.5rem ;
+            }
+        }
+        .person_card{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            img{
+                margin: 0px auto;
+                display: flex;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .inicio_container{
+        display: flex;
+        flex-direction: column-reverse;
+        .intro_content-text{
+            width: 100%;
+            .title_init{
+                font-size: 3rem !important;
+            }
+        }
+        .person_card{
+            .container_person{
+                .react-magic-motion-card-expanded{
+                    width: 95% !important;
+                }
+                img{
+                    margin: 0px auto;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
