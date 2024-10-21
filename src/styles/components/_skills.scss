@@ -10,11 +10,13 @@
         align-self: flex-start;
         .title{
             color: var(--white);
-            font-size: 2rem;
+            font-size: 4rem;
             text-transform: uppercase;
             letter-spacing: 0.5rem;
-            font-weight: 600;
+            font-weight: bolder;
             margin-bottom: 30px;
+            text-shadow: -5px 3px 2px rgba(0, 0, 0, 0.39);
+            text-align: center;
         }
         p{
             color: var(--white);

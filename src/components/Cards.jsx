@@ -6,9 +6,9 @@ import { GiWeight } from "react-icons/gi";
 import { CiRuler } from "react-icons/ci";
 import { Slider } from '@mui/material';
 
-export const Cards = () => {
+export const Cards = ({ onSelectPokemon }) => { 
   const [pokemons, setPokemons] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [closing, setClosing] = useState(false); 
 
@@ -45,7 +45,6 @@ export const Cards = () => {
     };
   }, [pokemons]);
 
-  
   const toggleModal = (pokemon) => {
     if (isOpen) {
       setClosing(true); 
@@ -55,8 +54,9 @@ export const Cards = () => {
         setSelectedPokemon(null);
       }, 300);
     } else {
-      setSelectedPokemon(pokemon); 
-      setIsOpen(true); 
+      setSelectedPokemon(pokemon);
+      onSelectPokemon(pokemon); 
+      setIsOpen(true);
     }
   };
 
@@ -69,11 +69,11 @@ export const Cards = () => {
             <label key={pokemon.name} id={pokemon.name} className='content_card'>
               <div 
                 className={`poke_card tilt-card front ${primaryType}`}
-                onClick={() => toggleModal(pokemon)} 
+                onClick={() => toggleModal(pokemon)}
               >
                 <span className={`poke-id id-${primaryType}`}>{pokemon.id}</span>
                 <figure className='container_img-pokemon'>
-                  <img  src={pokemon.sprites?.other?.['official-artwork']?.front_default || pokemon.sprites.front_default} alt={pokemon.name} />
+                  <img src={pokemon.sprites?.other?.['official-artwork']?.front_default || pokemon.sprites.front_default} alt={pokemon.name} />
                 </figure>
                 <header>
                   <h2 className='title_pokemon-name'>{pokemon.name}</h2>
@@ -81,17 +81,13 @@ export const Cards = () => {
                     <h3 className='type_title'>Type:</h3>
                     <div className='types_badges-container'>
                       {pokemon.types.map((type) => (
-                          <Badge type={type.type.name}>{type.type.name}</Badge>
+                          <Badge key={type.type.name} type={type.type.name}>{type.type.name}</Badge>
                       ))}
                     </div>
                   </div>
                   <div className={'sizes-container'}>
-                      <h2><span>{
-                      pokemon.weight / 10
-                      } Kg</span> <br /> <GiWeight size="2em"/> Weight </h2>
-                      <h2><span>{
-                      pokemon.height / 10
-                      } M</span> <br /> <CiRuler size="2em"/> Height </h2>
+                    <h2><span>{pokemon.weight / 10} Kg</span> <br /> <GiWeight size="2em"/> Weight </h2>
+                    <h2><span>{pokemon.height / 10} M</span> <br /> <CiRuler size="2em"/> Height </h2>
                   </div>
                 </header>
               </div>
@@ -101,7 +97,6 @@ export const Cards = () => {
       </div>
 
       {isOpen && selectedPokemon && (
-        
         <div
           className={`modal-overlay ${closing ? 'closing' : 'open'}`} 
           onClick={() => toggleModal(null)}
@@ -114,7 +109,7 @@ export const Cards = () => {
             <figure>
               <img src={selectedPokemon.sprites?.other?.['official-artwork']?.front_default || selectedPokemon.sprites.front_default} alt={selectedPokemon.name} />
             </figure>
-            <div className="pokemon-details ">
+            <div className="pokemon-details">
               <div className='modal-container_types'>
                 <h3>Type:</h3>
                 <div className='types'>
@@ -134,16 +129,16 @@ export const Cards = () => {
               <h3>Stats:</h3>
               <ul>
                 {selectedPokemon.stats.map((stat, index) => (
-                    <li key={index}>
-                      <strong>{stat.stat.name}:</strong> {stat.base_stat}
-                      <Slider
-                        value={stat.base_stat}
-                        min={0} 
-                        max={150} 
-                        disabled 
-                      />
-                    </li>
-                  ))}
+                  <li key={index}>
+                    <strong>{stat.stat.name}:</strong> {stat.base_stat}
+                    <Slider
+                      value={stat.base_stat}
+                      min={0}
+                      max={150}
+                      disabled
+                    />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

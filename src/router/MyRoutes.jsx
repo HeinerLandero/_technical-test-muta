@@ -6,11 +6,10 @@ import { Footer } from '../components/layout/Footer';
 import { Proyecto} from '../components/Proyecto';
 
 export const MyRoutes = () => {
+
   return (
     <BrowserRouter>
-         {/*Navegacion*/}
          <HeaderNav/>
-         {/*Contenido*/}
          <section className=''>
             <Routes>
                 <Route path='/' element={< Navigate to ="/inicio"/>}/>
@@ -22,14 +21,10 @@ export const MyRoutes = () => {
                       <p>page no found</p>
                      <Link type='button' to="/" className='contact_me'>inicio</Link>
                   </div>
-
                 }/>
-
             </Routes>
          </section>
-        {/*Footer*/}
         <Footer/>
-
     </BrowserRouter>
   )
 }

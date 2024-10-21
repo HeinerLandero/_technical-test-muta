@@ -37,7 +37,7 @@ const Badge = ({ children, type }) => {
     }
   }, []);
 
-  const Icon = typeIcons[type.toLowerCase()] || <CgPokemon />; // Default to a generic Pokémon icon if type is not found
+  const Icon = typeIcons[type.toLowerCase()] || <CgPokemon />; 
 
   return (
     <div className="badge-wrapper" ref={badgeWrapper}>

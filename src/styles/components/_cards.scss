@@ -32,6 +32,7 @@
           font-size: 1.5rem;
           border: 2px solid var(--white);
           color: var(--white);
+          text-shadow: -3px -2px 2px rgba(0,0,0,0.39);
         }
         .id-fire {
           background:var(--fire);
@@ -127,6 +128,7 @@
       text-transform: uppercase;
       font-weight: bolder;
       letter-spacing: 1.5px;
+      text-shadow: -3px -2px 2px rgba(0,0,0,0.39);
     }
     .type_container {
       width: 100%;
@@ -135,6 +137,7 @@
       justify-content: center;
       .type_title {
         color: var(--white);
+        text-shadow: -3px -2px 2px rgba(0,0,0,0.39);
       }
       .types_badges-container {
         display: flex;
@@ -146,6 +149,7 @@
       text-align: center;
       gap:20px;
       margin-top: 22px;
+      text-shadow: -3px -2px 2px rgba(0,0,0,0.39);
       h2{
         color: var(--white);
         font-size: 1.5rem;
@@ -176,7 +180,7 @@
     border-radius: 20px;
   }
   .fire {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--fire) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--fire) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -185,7 +189,7 @@
   }
 
   .water {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--water) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--water) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px) ;
@@ -194,7 +198,7 @@
   }
 
   .electric {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--electric) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--electric) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px);
@@ -203,7 +207,7 @@
   }
 
   .grass {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--grass) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--grass) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px);
@@ -212,7 +216,7 @@
   }
 
   .ice {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--ice) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--ice) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px);  
@@ -221,7 +225,7 @@
   }
 
   .fighting {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--fighting) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--fighting) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px);
@@ -230,7 +234,7 @@
   }
 
   .poison {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--poison) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--poison) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -239,7 +243,7 @@
   }
 
   .ground {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--ground) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--ground) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -248,7 +252,7 @@
   }
 
   .flying {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--flying) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--flying) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -257,7 +261,7 @@
   }
 
   .psychic {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--psychic) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--psychic) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -266,7 +270,7 @@
   }
 
   .bug {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--bug) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--bug) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px);    
@@ -275,7 +279,7 @@
   }
 
   .rock {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--rock) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--rock) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -284,7 +288,7 @@
   }
 
   .ghost {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--ghost) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--ghost) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -293,7 +297,7 @@
   }
 
   .dragon {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--dragon) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--dragon) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -302,7 +306,7 @@
   }
 
   .dark {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--dark) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--dark) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -311,7 +315,7 @@
   }
 
   .steel {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--steel) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--steel) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -320,7 +324,7 @@
   }
 
   .fairy {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--fairy) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--fairy) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -329,7 +333,7 @@
   }
 
   .normal {
-    background: linear-gradient(356deg, rgba(0,0,0,1) 0%, var(--normal) 95%);
+    background: linear-gradient(356deg, #ffffff -281%, var(--normal) 95%);
     figure{
       img{
         filter:drop-shadow(2px 4px 8px );
@@ -361,7 +365,6 @@
   z-index: 9999;
   @media screen and (max-width:990px){
     height: 100%;
-    max-height: 600px;
     width: 100%;
   }
   .modal-content {
@@ -371,6 +374,20 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      height: 50%;
+      background-image: url(/src/images/bg-img.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto;
+      left: 0;
+      width: 100%;
+      max-width: 135px;
+      bottom: 0;
+    }
     .close{
       position: absolute;
       width: 60px;
@@ -388,14 +405,23 @@
       background-position: center;
       background-repeat: no-repeat;
       background-color: var(--fighting);
+      @media screen and (max-width:990px){
+        left: 1%;
+        top: 1%;
+      }
       &:hover{
         scale: 1.3;
         transition: all 1.1s;
       }
     }
+    figure{
+      margin-top: auto;
+    }
     .pokemon-details {
       text-transform: uppercase;
       width: 50%;
+      text-shadow: 4px 1px 2px rgba(0, 0, 0, 0.39);
+      font-size: 1.2rem;
         .modal-container_types{
           display: flex;
           align-items: center;
@@ -406,6 +432,10 @@
         ul{
           li{
             color: var(--white);
+            .Mui-disabled{
+              color: var(--white);
+              text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+            }
           }
         }
     }
@@ -416,6 +446,7 @@
       color: var(--white);
       letter-spacing: 5px;
       font-size: 3rem;
+      text-shadow: -3px -2px 2px rgba(0,0,0,0.39);
     }
     h3{
       color: var(--white);
@@ -441,6 +472,24 @@
         right: 0;
       }
     }
+  }
+}
+@media screen and (max-width:990px){
+  .card-1-page{
+    .front{
+      .container_img-pokemon{
+        margin: -30% auto 0;
+        width: 70%;
+      }
+    }
+    .cards {
+      .content_card{
+        .poke_card{
+          height: 562px;
+        }
+      }
+    }
+    
   }
 }
 
