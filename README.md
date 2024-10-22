@@ -53,6 +53,15 @@ npm run build
 ```
 This will generate a production-ready build of your portfolio in the build directory, which can then be deployed to a web server.
 
+
+
+Preview:
+###
+![Cards](https://github.com/user-attachments/assets/fd273ae7-154d-4008-83e8-44f88a4f90c8)
+
+![Modal-Mobile](https://github.com/user-attachments/assets/5e219c5b-f042-4563-a4fe-eb0f26567757)
+
+###
 Features:
 ###
 
