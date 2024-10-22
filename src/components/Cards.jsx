@@ -5,17 +5,24 @@ import VanillaTilt from 'vanilla-tilt';
 import { GiWeight } from "react-icons/gi";
 import { CiRuler } from "react-icons/ci";
 import { Slider } from '@mui/material';
+import { Filter } from './Filter';
 
-export const Cards = ({ onSelectPokemon }) => { 
+export const Cards = ({ onSelectPokemon }) => {
   const [pokemons, setPokemons] = useState([]);
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
-  const [closing, setClosing] = useState(false); 
+  const [closing, setClosing] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [filter, setFilter] = useState('');
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
+
+  const pokemonsPerPage = 20;
 
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20');
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonsPerPage}&offset=${(currentPage - 1) * pokemonsPerPage}`);
         const pokemonData = await Promise.all(
           response.data.results.map(async (pokemon) => {
             const pokemonResponse = await axios.get(pokemon.url);
@@ -23,13 +30,15 @@ export const Cards = ({ onSelectPokemon }) => {
           })
         );
         setPokemons(pokemonData);
+        setFilteredPokemons(pokemonData);
+        setTotalPages(Math.ceil(response.data.count / pokemonsPerPage));
       } catch (error) {
         console.error('Error fetching Pokémon data:', error);
       }
     };
 
     fetchPokemons();
-  }, []);
+  }, [currentPage]);
 
   useEffect(() => {
     const tiltElements = document.querySelectorAll(".tilt-card");
@@ -45,31 +54,44 @@ export const Cards = ({ onSelectPokemon }) => {
     };
   }, [pokemons]);
 
+  useEffect(() => {
+    const filtered = pokemons.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(filter.toLowerCase()) ||
+      pokemon.types.some(type => type.type.name.toLowerCase().includes(filter.toLowerCase()))
+    );
+    setFilteredPokemons(filtered);
+  }, [filter, pokemons]);
+
   const toggleModal = (pokemon) => {
     if (isOpen) {
-      setClosing(true); 
+      setClosing(true);
       setTimeout(() => {
-        setIsOpen(false); 
-        setClosing(false); 
+        setIsOpen(false); // Cierra el modal
+        setClosing(false);
         setSelectedPokemon(null);
       }, 300);
     } else {
-      setSelectedPokemon(pokemon);
-      onSelectPokemon(pokemon); 
-      setIsOpen(true);
+      setSelectedPokemon(pokemon); // Establece el Pokémon seleccionado
+      onSelectPokemon(pokemon); // Llama a la función para actualizar el Pokémon seleccionado en el componente principal
+      setIsOpen(true); // Abre el modal
     }
+  };
+
+  const handleFilterChange = (value) => {
+    setFilter(value);
   };
 
   return (
     <section className="page card-1-page">
+      <Filter onFilterChange={handleFilterChange} />
       <div className="cards">
-        {pokemons.map((pokemon) => {
+        {filteredPokemons.map((pokemon) => {
           let primaryType = pokemon.types[0].type.name.toLowerCase();
           return (
             <label key={pokemon.name} id={pokemon.name} className='content_card'>
-              <div 
+              <div
                 className={`poke_card tilt-card front ${primaryType}`}
-                onClick={() => toggleModal(pokemon)}
+                onClick={() => toggleModal(pokemon)} // Llamamos a toggleModal al hacer clic
               >
                 <span className={`poke-id id-${primaryType}`}>{pokemon.id}</span>
                 <figure className='container_img-pokemon'>
@@ -98,7 +120,7 @@ export const Cards = ({ onSelectPokemon }) => {
 
       {isOpen && selectedPokemon && (
         <div
-          className={`modal-overlay ${closing ? 'closing' : 'open'}`} 
+          className={`modal-overlay ${closing ? 'closing' : 'open'}`}
           onClick={() => toggleModal(null)}
         >
           <div className={`modal-content container ${selectedPokemon.types[0].type.name.toLowerCase()}`} onClick={(e) => e.stopPropagation()}>
@@ -144,6 +166,16 @@ export const Cards = ({ onSelectPokemon }) => {
           </div>
         </div>
       )}
+
+      <div className="pagination">
+        <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <span>{currentPage}</span>
+        <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+          Next
+        </button>
+      </div>
     </section>
   );
 };

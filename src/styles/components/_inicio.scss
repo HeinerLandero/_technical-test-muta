@@ -1,3 +1,6 @@
+@import '/src/scss/abstracts/variables';
+@import '/src/scss/abstracts/mixins';
+
 .wrapper{
     .inicio_container{
         width: 100%;
@@ -9,11 +12,15 @@
         min-height: 500px;
         position: relative;
         overflow: hidden;
+        max-width: 1920px;
+        @include respond-to(md) {
+          border-radius: 0px 0px 57px 57px;
+        }
         &::before{
             content: "";
             position: absolute;
             height: 50%;
-            background-image: url(/src/images/bg-img.svg);
+            background-image: url('/src/images/bg-img.svg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -22,6 +29,15 @@
             max-width: 200px;
             bottom: -15%;
             transform: rotate(-90deg);
+            @include respond-to(lg) {
+              right: -38%;
+              width: 100%;
+              max-width: 100%;
+              bottom: 15%;
+              transform: rotate(180deg);
+              height: 50%;
+              background-size: 100% 100%;
+            }
           }
         .pokemon_card-description{
             .container_description{
@@ -32,6 +48,9 @@
                     
                     img{
                         filter: drop-shadow(2px 4px 8px );
+                        @include respond-to(sm) {
+                          width: 80%;
+                        }
                     }
                     h2,h3,p{
                         color: var(--white);
@@ -45,17 +64,23 @@
                         font-size: 3rem;
                         text-align: center;
                         transform: rotate(180deg);
-                    }
-                    .pokemon-details{
+                      }
+                      .pokemon-details{
                         max-width: 650px;
                         position: relative;
                         h3{
-                            font-size: 3rem;
-                            font-family: var(--primary-font);
+                          font-size: 3rem;
+                          font-family: var(--primary-font);
+                          @include respond-to(lg) {
+                            font-size: 2rem;
+                          }
                         }
                         p{
                             font-size: 1.3rem;
                             text-transform: capitalize;
+                            @include respond-to(sm) {
+                              font-size: 1rem;
+                            }
                         }
                     }
                 }
@@ -233,12 +258,11 @@
             flex-direction: column-reverse;
             border-radius: 0 0 18% 18%;
             &::before{
-                right: -30%;
                 width: 100%;
                 max-width: 100%;
                 bottom: 15%;
                 transform: rotate(180deg);
-                height: 100%;
+                height: 50%;
             }
             .pokemon_card-description{
                 margin-top: 60px;
@@ -263,25 +287,19 @@
 }
 
 @media screen and (max-width:600px){
-    .inicio_container{
-        display: flex;
-        flex-direction: column-reverse;
-        .intro_content-text{
-            width: 100%;
-            .title_init{
-                font-size: 3rem !important;
-            }
-        }
-        .person_card{
-            .container_person{
-                .react-magic-motion-card-expanded{
-                    width: 95% !important;
-                }
-                img{
-                    margin: 0px auto;
-                    display: flex;
-                }
-            }
-        }
-    }
+  .wrapper{
+      .inicio_container{
+          .pokemon_card-description{
+              .container_description{
+                  .pokemon-main-description{
+                      flex-direction: column;
+                      h3 {
+                          font-size: 5rem;
+                        }
+                  }
+              }
+          }
+         
+      }
+  }
 }
