@@ -40,6 +40,27 @@
             }
           }
         .pokemon_card-description{
+            .loading_logo{
+              width: 100%;
+              font-size: 2rem;
+              text-align: center;
+              color: var(--white);
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              &::after{
+                position: absolute;
+                content: " ";
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                top: -36%;
+                background-image: url('/src/images/loading.gif');
+                width: 80px;
+                height: 80px;
+              }
+            }
             .container_description{
                 .pokemon-main-description{
                     display: flex;
@@ -69,7 +90,6 @@
                         max-width: 650px;
                         position: relative;
                         h3{
-                          font-size: 3rem;
                           font-family: var(--primary-font);
                           @include respond-to(lg) {
                             font-size: 2rem;

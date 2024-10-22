@@ -9,13 +9,14 @@ import { Filter } from './Filter';
 
 export const Cards = ({ onSelectPokemon }) => {
   const [pokemons, setPokemons] = useState([]);
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
+  const [error, setError] = useState(false); 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [closing, setClosing] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [filter, setFilter] = useState('');
-  const [filteredPokemons, setFilteredPokemons] = useState([]);
 
   const pokemonsPerPage = 20;
 
@@ -32,8 +33,10 @@ export const Cards = ({ onSelectPokemon }) => {
         setPokemons(pokemonData);
         setFilteredPokemons(pokemonData);
         setTotalPages(Math.ceil(response.data.count / pokemonsPerPage));
+        setError(false); 
       } catch (error) {
         console.error('Error fetching Pokémon data:', error);
+        setError(true);
       }
     };
 
@@ -66,14 +69,14 @@ export const Cards = ({ onSelectPokemon }) => {
     if (isOpen) {
       setClosing(true);
       setTimeout(() => {
-        setIsOpen(false); // Cierra el modal
+        setIsOpen(false); 
         setClosing(false);
         setSelectedPokemon(null);
       }, 300);
     } else {
-      setSelectedPokemon(pokemon); // Establece el Pokémon seleccionado
-      onSelectPokemon(pokemon); // Llama a la función para actualizar el Pokémon seleccionado en el componente principal
-      setIsOpen(true); // Abre el modal
+      setSelectedPokemon(pokemon); 
+      onSelectPokemon(pokemon); 
+      setIsOpen(true); 
     }
   };
 
@@ -91,7 +94,7 @@ export const Cards = ({ onSelectPokemon }) => {
             <label key={pokemon.name} id={pokemon.name} className='content_card'>
               <div
                 className={`poke_card tilt-card front ${primaryType}`}
-                onClick={() => toggleModal(pokemon)} // Llamamos a toggleModal al hacer clic
+                onClick={() => toggleModal(pokemon)} 
               >
                 <span className={`poke-id id-${primaryType}`}>{pokemon.id}</span>
                 <figure className='container_img-pokemon'>

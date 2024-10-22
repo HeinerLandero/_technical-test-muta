@@ -30,7 +30,7 @@ export const DescriptionPokemonIndex = ({ pokemon }) => {
   }, [pokemon]);
 
   if (!pokemon || !speciesData) {
-    return <div>Loading Pokémon data...</div>;
+    return <div className='loading_logo'>Loading Pokémon data...</div>;
   }
 
   const flavorText = speciesData.flavor_text_entries.find(

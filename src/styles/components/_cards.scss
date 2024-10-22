@@ -187,11 +187,11 @@
   }
   header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 40px;
+    height: 62%;
     margin-bottom: 26px;
     flex-direction: column;
+    justify-content: space-between;
   }
   .js-tilt-glare{
     border-radius: 20px;
