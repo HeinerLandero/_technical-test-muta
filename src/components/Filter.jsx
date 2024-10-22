@@ -10,7 +10,7 @@ export const Filter = ({ onFilterChange }) => {
   };
 
   return (
-    <input
+    <input className='poke_filter'
       type="text"
       placeholder="Filter by name or type"
       value={filter}

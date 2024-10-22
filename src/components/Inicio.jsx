@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Skills } from './Skills';
-import { Portafolio } from './Portafolio';
+import { PokemoList } from './PokemoList';
 import { DescriptionPokemonIndex } from './DescriptionPokemonIndex';
 import axios from 'axios';
 
@@ -45,8 +44,7 @@ export const Inicio = () => {
           </div>
         </div>
       </div>
-      <Skills onSelectPokemon={handleSelectPokemon} />
-      <Portafolio/>
+      <PokemoList onSelectPokemon={handleSelectPokemon} />
     </div>
   );
 };

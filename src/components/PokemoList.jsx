@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cards } from './Cards';
 
-export const Skills = ({ onSelectPokemon }) => { 
+export const PokemoList = ({ onSelectPokemon }) => { 
   return (
     <div className='container_main flex-column d-flex align-items-center about-me'>
       <div className='container d-flex'> 
